@@ -1,0 +1,94 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+bin/
+var/
+*.log
+*.pot
+*.mo
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+db.sqlite3
+*.db
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+static_root/
+media_root/
+
+# Environments
+.env
+*.env
+env/
+venv/
+ENV/
+venv.bak/
+*.venv/
+
+# PyCharm
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Migrations (optional: if you don't want to track migration files initially)
+# ** Uncomment below if you want to ignore migrations **
+# */migrations/
+# !*/migrations/__init__.py
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Test output
+junitxml.xml
+test-results/
+
+# Other
+*.swp
+*.bak
+*.tmp
+*.~*
+
+#Notes:
+#This will:
+#
+#Ignore PyCharm’s .idea/ directory.
+#
+#Ignore virtual environment directories (you can adjust names if your venv is different).
+#
+#Ignore Python cache and build artifacts.
+#
+#Ignore SQLite DB (if you’re using SQLite locally).
+#
+#Ignore environment variable files (.env).
+#
+#Optional:
+#
+#If you do want to track migrations/ (which is recommended in most cases), leave them included (default above keeps them tracked).
+#
+#If you’re using media/ or staticfiles/ for user uploads or generated static files — usually best to ignore in Git, serve these from storage (S3, etc.).
