@@ -27,7 +27,7 @@ class SchoolDBMiddleware:
         """
         Determines the DB alias for the current school based on subdomain.
         Example:
-            abc.schoolplatform.com -> school_abc
+            abc.schoolplatform.com --> school_abc
             schoolplatform.com -> default
         """
         if settings.DEBUG:
