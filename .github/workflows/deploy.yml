@@ -1,0 +1,25 @@
+name: Deploy OneSchool to Hostinger
+
+on:
+  push:
+    branches:
+      - dev
+      - prod
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.HOSTINGER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.HOSTINGER_SSH_HOST }} >> ~/.ssh/known_hosts
+
+    - name: Deploy over SSH
+      run: |
+        TARGET=$([ "${GITHUB_REF##*/}" = "prod" ] && echo "/public_html/" || echo "/public_html/dev/")
+        rsync -avz --delete ./ ${{ secrets.HOSTINGER_SSH_USERNAME }}@${{ secrets.HOSTINGER_SSH_HOST }}:$TARGET
