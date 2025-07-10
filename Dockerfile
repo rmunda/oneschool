@@ -12,4 +12,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Run server
-CMD ["gunicorn", "school_one.wsgi:application", "--bind", "0.0.0.0:8000"]
+# CMD ["gunicorn", "school_one.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py collectstatic --noinput && gunicorn school_one.wsgi:application --bind 0.0.0.0:8000"]
+

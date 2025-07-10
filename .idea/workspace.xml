@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20f92179-4c30-4c80-902f-1e8509102486" name="Changes" comment="Added gunicorn to require">
+    <list default="true" id="20f92179-4c30-4c80-902f-1e8509102486" name="Changes" comment="Allowed the host ip">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/school_one/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/school_one/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752147133197</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Allowed the host ip">
+      <option name="closed" value="true" />
+      <created>1752148031711</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752148031711</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -112,6 +121,7 @@
     <MESSAGE value="Added git ignore" />
     <MESSAGE value="Integrating ci/cd" />
     <MESSAGE value="Added gunicorn to require" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added gunicorn to require" />
+    <MESSAGE value="Allowed the host ip" />
+    <option name="LAST_COMMIT_MESSAGE" value="Allowed the host ip" />
   </component>
 </project>
