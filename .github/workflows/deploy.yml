@@ -33,8 +33,15 @@ jobs:
     - name: Deploy on VPS
       run: |
         ssh ${{ secrets.HOSTINGER_SSH_USERNAME }}@${{ secrets.HOSTINGER_SSH_HOST }} "
-          docker pull rmdocker121/oneschool:${{ github.ref_name }} &&
-          docker stop oneschool || true &&
-          docker rm oneschool || true &&
-          docker run -d --name oneschool -p 80:8000 rmdocker121/oneschool:${{ github.ref_name }}
+          cd /home/youruser/oneschool &&
+          git pull origin ${{ github.ref_name }} &&
+          docker-compose down &&
+          docker-compose up -d --build
         "
+#      run: |
+#        ssh ${{ secrets.HOSTINGER_SSH_USERNAME }}@${{ secrets.HOSTINGER_SSH_HOST }} "
+#          docker pull rmdocker121/oneschool:${{ github.ref_name }} &&
+#          docker stop oneschool || true &&
+#          docker rm oneschool || true &&
+#          docker run -d --name oneschool -p 80:8000 rmdocker121/oneschool:${{ github.ref_name }}
+#        "
