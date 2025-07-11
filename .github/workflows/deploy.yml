@@ -30,10 +30,10 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H ${{ secrets.HOSTINGER_SSH_HOST }} >> ~/.ssh/known_hosts
 
-    - name: Deploy on VPS
+    - name: Deploy on VPS via docker-compose
       run: |
         ssh ${{ secrets.HOSTINGER_SSH_USERNAME }}@${{ secrets.HOSTINGER_SSH_HOST }} "
-          cd /home/youruser/oneschool &&
+          cd /home/ubuntu/oneschool &&
           git pull origin ${{ github.ref_name }} &&
           docker-compose down &&
           docker-compose up -d --build
