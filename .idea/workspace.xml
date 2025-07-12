@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20f92179-4c30-4c80-902f-1e8509102486" name="Changes" comment="Rechecking ci/cd for git resolution in vps">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+    <list default="true" id="20f92179-4c30-4c80-902f-1e8509102486" name="Changes" comment="Rechecking ci/cd for git resolution in vps test 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -180,7 +179,23 @@
       <option name="project" value="LOCAL" />
       <updated>1752328318688</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Rechecking ci/cd for git resolution in vps">
+      <option name="closed" value="true" />
+      <created>1752329391106</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1752329391106</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Rechecking ci/cd for git resolution in vps test 3">
+      <option name="closed" value="true" />
+      <created>1752329695742</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1752329695742</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -201,6 +216,7 @@
     <MESSAGE value="debugging the nginx config" />
     <MESSAGE value="renamed the nginx.config to .conf" />
     <MESSAGE value="Rechecking ci/cd for git resolution in vps" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rechecking ci/cd for git resolution in vps" />
+    <MESSAGE value="Rechecking ci/cd for git resolution in vps test 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rechecking ci/cd for git resolution in vps test 3" />
   </component>
 </project>
