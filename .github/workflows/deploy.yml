@@ -36,9 +36,9 @@ jobs:
           echo 'Starting deployment on VPS...' &&
           cd /home/ubuntu/oneschool &&
           echo 'Pulling latest code from ${{github.ref_name}}...' &&
-          # git stash --include-untracked &&
+          git stash --include-untracked &&
           git pull origin ${{ github.ref_name }} &&
-          # git stash pop || true &&
+          git stash pop || true &&
           echo 'Rebuilding Docker containers...' &&
           docker-compose down &&
           docker-compose up -d --build &&
