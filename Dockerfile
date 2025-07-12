@@ -13,5 +13,9 @@ COPY . .
 
 # Run server
 # CMD ["gunicorn", "school_one.wsgi:application", "--bind", "0.0.0.0:8000"]
-CMD ["sh", "-c", "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn school_one.wsgi:application --bind 0.0.0.0:8000"]
+# CMD ["sh", "-c", "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn school_one.wsgi:application --bind 0.0.0.0:8000"]
+COPY wait-for-db.sh /wait-for-db.sh
+RUN chmod +x /wait-for-db.sh
+
+CMD ["/wait-for-db.sh"]
 
