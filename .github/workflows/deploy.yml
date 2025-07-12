@@ -35,7 +35,7 @@ jobs:
         ssh ${{ secrets.HOSTINGER_SSH_USERNAME }}@${{ secrets.HOSTINGER_SSH_HOST }} "
           echo 'Starting deployment on VPS...' &&
           cd /home/ubuntu/oneschool &&
-          echo 'Pulling latest code...' &&
+          echo 'Pulling latest code from ${{github.ref_name}}..' &&
           git stash --include-untracked &&
           git pull origin ${{ github.ref_name }} &&
           git stash pop || true &&
