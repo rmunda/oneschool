@@ -33,13 +33,38 @@ jobs:
     - name: Deploy on VPS using docker-compose
       run: |
         ssh ${{ secrets.HOSTINGER_SSH_USERNAME }}@${{ secrets.HOSTINGER_SSH_HOST }} "
+          echo 'Starting deployment on VPS...' &&
           cd /home/ubuntu/oneschool &&
+          echo 'Pulling latest code...' &&
           git stash --include-untracked &&
           git pull origin ${{ github.ref_name }} &&
           git stash pop || true &&
+          echo 'Rebuilding Docker containers...' &&
           docker-compose down &&
-          docker-compose up -d --build
+          docker-compose up -d --build &&
+          echo 'Deployment finished successfully.'
         "
+#        run: |
+#            ssh ${{ secrets.HOSTINGER_SSH_USERNAME }}@${{ secrets.HOSTINGER_SSH_HOST }} << 'EOF'
+#              set -e  # Exit immediately if a command fails
+#
+#              cd /home/ubuntu/oneschool
+#
+#              echo "Stashing local changes (if any)..."
+#              git stash --include-untracked || true
+#
+#              echo "Pulling latest changes from branch ${{ github.ref_name }}..."
+#              git pull origin ${{ github.ref_name }}
+#
+#              echo "Restoring local changes (if needed)..."
+#              git stash pop || true
+#
+#              echo "Restarting services with docker-compose..."
+#              docker-compose down
+#              docker-compose up -d --build
+#
+#              echo "Deployment complete!"
+#            EOF
 #      run: |
 #        ssh ${{ secrets.HOSTINGER_SSH_USERNAME }}@${{ secrets.HOSTINGER_SSH_HOST }} "
 #          docker pull rmdocker121/oneschool:${{ github.ref_name }} &&
