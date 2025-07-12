@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20f92179-4c30-4c80-902f-1e8509102486" name="Changes" comment="fixing the nginx config">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+    <list default="true" id="20f92179-4c30-4c80-902f-1e8509102486" name="Changes" comment="debugging the nginx config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nginx.config" beforeDir="false" afterPath="$PROJECT_DIR$/nginx.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752298632310</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="debugging the nginx config">
+      <option name="closed" value="true" />
+      <created>1752322504817</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1752322504817</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -166,6 +174,7 @@
     <MESSAGE value="fixing ci/cd updated source directory path in compose" />
     <MESSAGE value="updated the deploy code" />
     <MESSAGE value="fixing the nginx config" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing the nginx config" />
+    <MESSAGE value="debugging the nginx config" />
+    <option name="LAST_COMMIT_MESSAGE" value="debugging the nginx config" />
   </component>
 </project>
