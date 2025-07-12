@@ -1,6 +1,9 @@
 # Start from official Python image
 FROM python:3.11-slim
 
+# Install dependencies including netcat (nc)
+RUN apt-get update && apt-get install -y netcat && apt-get clean
+
 # Set workdir
 WORKDIR /app
 

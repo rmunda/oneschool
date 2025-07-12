@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20f92179-4c30-4c80-902f-1e8509102486" name="Changes" comment="Added port for pg container for local connectivity">
-      <change afterPath="$PROJECT_DIR$/wait-for-db.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-    </list>
+    <list default="true" id="20f92179-4c30-4c80-902f-1e8509102486" name="Changes" comment="fixing db issue with django container" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752330447502</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fixing db issue with django container">
+      <option name="closed" value="true" />
+      <created>1752333198027</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1752333198027</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -228,6 +232,7 @@
     <MESSAGE value="Rechecking ci/cd for git resolution in vps" />
     <MESSAGE value="Rechecking ci/cd for git resolution in vps test 3" />
     <MESSAGE value="Added port for pg container for local connectivity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added port for pg container for local connectivity" />
+    <MESSAGE value="fixing db issue with django container" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing db issue with django container" />
   </component>
 </project>
