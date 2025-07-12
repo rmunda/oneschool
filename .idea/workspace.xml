@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20f92179-4c30-4c80-902f-1e8509102486" name="Changes" comment="renamed the nginx.config to .conf" />
+    <list default="true" id="20f92179-4c30-4c80-902f-1e8509102486" name="Changes" comment="Rechecking ci/cd for git resolution in vps">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752325527346</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Rechecking ci/cd for git resolution in vps">
+      <option name="closed" value="true" />
+      <created>1752326331785</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1752326331785</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -181,6 +191,7 @@
     <MESSAGE value="fixing the nginx config" />
     <MESSAGE value="debugging the nginx config" />
     <MESSAGE value="renamed the nginx.config to .conf" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed the nginx.config to .conf" />
+    <MESSAGE value="Rechecking ci/cd for git resolution in vps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rechecking ci/cd for git resolution in vps" />
   </component>
 </project>
