@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-&kgls@5h)3!lc95nh7k!+fldrm_h(^yj_o*oqj#b!!cez^ox57
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['145.223.19.96','towntkr.com', 'www.towntkr.com']
+ALLOWED_HOSTS = ['145.223.19.96','towntkr.com', 'www.towntkr.com','abc.towntkr.com', 'www.towntkr.com']
 
 # Application definition
 
@@ -87,22 +87,22 @@ DATABASES = {
         'HOST': 'db',
         'PORT': '5432',
     },
-    # 'school_abc': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'abc_db',
-    #     'USER': 'abc_user',
-    #     'PASSWORD': 'abc_pass',
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # },
-    # 'school_xyz': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'xyz_db',
-    #     'USER': 'xyz_user',
-    #     'PASSWORD': 'xyz_pass',
-    #     'HOST': 'localhost',
-    #     'PORT': '5432',
-    # },
+    'school_abc': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db_school_abc',
+        'USER': 'oneschool',
+        'PASSWORD': 'Rxw121706#',
+        'HOST': 'db',
+        'PORT': '5432',
+    },
+    'school_xyz': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db_school_xyz',
+        'USER': 'oneschool',
+        'PASSWORD': 'Rxw121706#',
+        'HOST': 'db',
+        'PORT': '5432',
+    },
     'school_test': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'db_school_test',
