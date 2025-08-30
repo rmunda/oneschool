@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20f92179-4c30-4c80-902f-1e8509102486" name="Changes" comment="Added domain">
+    <list default="true" id="20f92179-4c30-4c80-902f-1e8509102486" name="Changes" comment="Added databases connection for schools">
+      <change afterPath="$PROJECT_DIR$/school_one/hosts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/school_one/tenant_admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/school_one/tenant_urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/core/management/commands/migrate_schools.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/management/commands/migrate_schools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/teachers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/teachers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school_one/db_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/school_one/db_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school_one/middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/school_one/middleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/school_one/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/school_one/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school_one/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/school_one/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,7 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753677590679</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added databases connection for schools">
+      <option name="closed" value="true" />
+      <created>1754321153834</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1754321153834</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -272,6 +292,22 @@
     <MESSAGE value="fixing db issue with django container test 3" />
     <MESSAGE value="fixing db issue with django container test 4" />
     <MESSAGE value="Added domain" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added domain" />
+    <MESSAGE value="Added databases connection for schools" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added databases connection for schools" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/school_one/middleware.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/school_one/urls.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

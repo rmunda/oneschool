@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-&kgls@5h)3!lc95nh7k!+fldrm_h(^yj_o*oqj#b!!cez^ox57
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['145.223.19.96','towntkr.com', 'www.towntkr.com','abc.towntkr.com', 'www.towntkr.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'oneschool', 'abc.oneschool', 'xyz.oneschool', 'test.oneschool']
 
 # Application definition
 
@@ -42,10 +42,14 @@ INSTALLED_APPS = [
 
     'apps.core',
     'apps.students',
-    'apps.teachers'
+    'apps.teachers',
+
+    # Django-host
+    'django_hosts'
 ]
 
 MIDDLEWARE = [
+    'django_hosts.middleware.HostsRequestMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,9 +57,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_hosts.middleware.HostsResponseMiddleware'
 ]
 
 ROOT_URLCONF = 'school_one.urls'
+
+ROOT_HOSTCONF = 'school_one.hosts' # points to hosts.py
+DEFAULT_HOST = 'www'
 
 TEMPLATES = [
     {
@@ -81,28 +89,36 @@ DATABASES = {
     # Shared platform databases for auth, groups, permissions
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': 'db',
+        'NAME': 'db_school_one',
+        'USER': 'postgres',
+        'PASSWORD': 'rxw121706#',
+        'HOST': 'localhost',
         'PORT': '5432',
     },
     'school_abc': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'db_school_abc',
-        'USER': 'oneschool',
-        'PASSWORD': 'Rxw121706#',
-        'HOST': 'db',
+        'USER': 'postgres',
+        'PASSWORD': 'rxw121706#',
+        'HOST': 'localhost',
         'PORT': '5432',
     },
     'school_xyz': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'db_school_xyz',
-        'USER': 'oneschool',
-        'PASSWORD': 'Rxw121706#',
-        'HOST': 'db',
+        'USER': 'postgres',
+        'PASSWORD': 'rxw121706#',
+        'HOST': 'localhost',
         'PORT': '5432',
     },
+    # 'school_klm': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'db_school_klm',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'rxw121706#',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # },
     'school_test': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'db_school_test',
@@ -114,12 +130,14 @@ DATABASES = {
     # Add dynamically as you onboard schools
 }
 
+# Added
 DATABASE_ROUTERS = [
     'school_one.auth_routers.AuthRouter',  # Handles shared data models(always comes first in the list)
     'school_one.db_router.SchoolDBRouter',  # Handles school-specific models
 ]
 
-MIDDLEWARE += ['school_one.middleware.SchoolDBMiddleware']
+MIDDLEWARE += ['school_one.middleware.SchoolDBMiddleware',
+               'school_one.middleware.RestrictCoreAdminMiddleware']
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

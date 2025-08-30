@@ -17,6 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from apps.core.admin import core_admin_site
+from .tenant_admin import tenant_admin_site
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
+    path('admin/', core_admin_site.urls),
+    # path("school-admin/", tenant_admin_site.urls),  # tenant admin → school data
 ]

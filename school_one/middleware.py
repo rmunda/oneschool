@@ -4,6 +4,9 @@ from django.conf import settings
 
 from .utils import set_current_school_db, clear_current_school_db
 
+from django.shortcuts import redirect
+from django.urls import reverse
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -44,3 +47,15 @@ class SchoolDBMiddleware:
 
         # No subdomain → default DB
         return 'default'
+
+
+class RestrictCoreAdminMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        host = request.get_host().split(':')[0]  # abc.oneschool
+        if host != "oneschool" and request.path.startswith("/admin/"):
+            # Block core admin on tenant subdomains
+            return redirect("/school-admin/")  # or return 404
+        return self.get_response(request)

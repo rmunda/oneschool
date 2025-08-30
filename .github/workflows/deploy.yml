@@ -23,14 +23,18 @@ jobs:
     - name: Push Docker image
       run: docker push rmdocker121/oneschool:${{ github.ref_name }}
 
-    - name: Setup SSH
+    # === Deploy to DEV Server ===
+
+    - name: Setup SSH for DEV VPS
+      if: github.ref_name == 'dev'
       run: |
         mkdir -p ~/.ssh
         echo "${{ secrets.HOSTINGER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan -H ${{ secrets.HOSTINGER_SSH_HOST }} >> ~/.ssh/known_hosts
 
-    - name: Deploy on VPS using docker-compose
+    - name: Deploy on DEV VPS using docker-compose
+      if: github.ref_name == 'dev'
       run: |
         ssh ${{ secrets.HOSTINGER_SSH_USERNAME }}@${{ secrets.HOSTINGER_SSH_HOST }} "
           echo 'Starting deployment on VPS...' &&
@@ -44,6 +48,33 @@ jobs:
           docker-compose up -d --build &&
           echo 'Deployment finished successfully.'
         "
+
+    # === Deploy to PROD Server ===
+
+    - name: Setup SSH for PROD VPS
+      if: github.ref_name == 'prod'
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.HOSTINGER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H ${{ secrets.HOSTINGER_SSH_HOST }} >> ~/.ssh/known_hosts
+
+    - name: Deploy on Dev VPS using docker-compose
+      if: github.ref_name == 'prod'
+      run: |
+        ssh ${{ secrets.HOSTINGER_SSH_USERNAME }}@${{ secrets.HOSTINGER_SSH_HOST }} "
+          echo 'Starting deployment on VPS...' &&
+          cd /home/ubuntu/oneschool &&
+          echo 'Pulling latest code from ${{github.ref_name}}...' &&
+          git stash --include-untracked &&
+          git pull origin ${{ github.ref_name }} &&
+          git stash pop || true &&
+          echo 'Rebuilding Docker containers...' &&
+          docker-compose down &&
+          docker-compose up -d --build &&
+          echo 'Deployment finished successfully.'
+        "
+
 #        run: |
 #            ssh ${{ secrets.HOSTINGER_SSH_USERNAME }}@${{ secrets.HOSTINGER_SSH_HOST }} << 'EOF'
 #              set -e  # Exit immediately if a command fails

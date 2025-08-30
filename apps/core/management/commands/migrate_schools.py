@@ -23,7 +23,7 @@ class Command(BaseCommand):
             return
 
         # Get apps from args, or use default
-        apps = options['apps'] or ['students', 'teachers', 'fees']
+        apps = options['apps'] or ['students', 'teachers']
 
         self.stdout.write(self.style.SUCCESS(f'Running migrations on DBs: {school_dbs}'))
         self.stdout.write(self.style.SUCCESS(f'Apps: {apps}'))

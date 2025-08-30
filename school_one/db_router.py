@@ -17,4 +17,11 @@ class SchoolDBRouter:
 
     def allow_migrate(self, db, app_label, model_name=None, **hints):
         # You can refine this if some apps are platform-wide
-        return True
+        #return True
+
+        if db == 'default':
+            # Only migrate core models like School to default
+            return app_label == 'core'
+        else:
+            # Don't allow core models (e.g., School) to be migrated to tenant DBs
+            return app_label != 'core'
