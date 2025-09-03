@@ -29,6 +29,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'oneschool', 'abc.oneschool', 'xyz.oneschool', 'test.oneschool']
 
+CSRF_TRUSTED_ORIGINS = [
+    "http://abc.oneschool:8000",
+    "http://xyz.oneschool:8000",
+    "http://oneschool:8000",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -62,7 +68,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'school_one.urls'
 
-ROOT_HOSTCONF = 'school_one.hosts' # points to hosts.py
+ROOT_HOSTCONF = 'school_one.hosts'  # points to hosts.py
 DEFAULT_HOST = 'www'
 
 TEMPLATES = [
@@ -139,6 +145,13 @@ DATABASE_ROUTERS = [
 MIDDLEWARE += ['school_one.middleware.SchoolDBMiddleware',
                'school_one.middleware.RestrictCoreAdminMiddleware']
 
+AUTH_USER_MODEL = "core.User"
+
+AUTHENTICATION_BACKENDS = [
+    "apps.core.auth_backends.SchoolBackend",
+    # "django.contrib.auth.backends.ModelBackend",  # fallback
+]
+# End
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
@@ -175,6 +188,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = '/app/static'
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
+# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-fieldpython manage.py collectstatic
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

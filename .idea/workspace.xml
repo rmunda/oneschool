@@ -5,20 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20f92179-4c30-4c80-902f-1e8509102486" name="Changes" comment="Added databases connection for schools">
-      <change afterPath="$PROJECT_DIR$/school_one/hosts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/school_one/tenant_admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/school_one/tenant_urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/core/auth_backends.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/core/management/commands/migrate_schools.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/management/commands/migrate_schools.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/core/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/teachers/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/teachers/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school_one/auth_routers.py" beforeDir="false" afterPath="$PROJECT_DIR$/school_one/auth_routers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/school_one/db_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/school_one/db_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/school_one/hosts.py" beforeDir="false" afterPath="$PROJECT_DIR$/school_one/hosts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/school_one/middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/school_one/middleware.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/school_one/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/school_one/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/school_one/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/school_one/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,6 +302,11 @@
           <url>file://$PROJECT_DIR$/school_one/urls.py</url>
           <line>16</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/school_one/middleware.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -3,10 +3,16 @@ from .utils import get_current_school_db
 
 class SchoolDBRouter:
     def db_for_read(self, model, **hints):
+        print('Model name', model._meta.app_label)
+        if model._meta.app_label in ('core', 'auth', 'admin', 'sessions', 'contenttypes'):
+            return 'default'
         db = get_current_school_db()
+        print('Database route', db)
         return db if db else 'default'
 
     def db_for_write(self, model, **hints):
+        if model._meta.app_label in ('core', 'auth', 'admin', 'sessions', 'contenttypes'):
+            return 'default'
         db = get_current_school_db()
         return db if db else 'default'
 
@@ -17,11 +23,11 @@ class SchoolDBRouter:
 
     def allow_migrate(self, db, app_label, model_name=None, **hints):
         # You can refine this if some apps are platform-wide
-        #return True
+        # return True
 
         if db == 'default':
             # Only migrate core models like School to default
-            return app_label == 'core'
+            return app_label in ('core', 'auth', 'admin', 'sessions', 'contenttypes')
         else:
             # Don't allow core models (e.g., School) to be migrated to tenant DBs
-            return app_label != 'core'
+            return app_label in ('core', 'auth', 'admin', 'sessions', 'contenttypes')

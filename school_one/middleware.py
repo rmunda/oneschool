@@ -33,16 +33,19 @@ class SchoolDBMiddleware:
             abc.schoolplatform.com --> school_abc
             schoolplatform.com -> default
         """
-        if settings.DEBUG:
-            dev_school = os.getenv("DJANGO_DEV_SCHOOL", "default")
-            print('Dev school: ', dev_school)
-            return f'school_{dev_school}'
+        # if settings.DEBUG:
+        #     dev_school = os.getenv("DJANGO_DEV_SCHOOL", "default")
+        #     print('Dev school: ', dev_school)
+        #     return f'school_{dev_school}'
         host = request.get_host().split(':')[0]  # Remove port if any
+        print('Host from middleware', host)
         parts = host.split('.')
+        print('Domain parts' , len(parts))
 
         # Handle cases where subdomain exists
-        if len(parts) > 2:
+        if len(parts) >= 2:
             subdomain = parts[0]
+            print(f'Database route key school_{subdomain}')
             return f'school_{subdomain}'
 
         # No subdomain → default DB
